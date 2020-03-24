@@ -1151,6 +1151,8 @@ class Signal1D(BaseSignal, CommonSignal1D):
                 with ignore_warning(message="The API of the `Polynomial` component"):
                     background_estimator = components1d.Polynomial(
                         polynomial_order, legacy=False)
+            elif background_type == 'Exponential':
+                background_estimator = components1d.Exponential()
             else:
                 raise ValueError(
                     "Background type: " +
